@@ -13,12 +13,12 @@ use constant  {
 	POWER			=> 1 / -1.008,
 };
 
-my $monthly_visitors = $ARGV[0] || die "Please pass in a monthly visitor amount";
+my $monthly_visitors = $ARGV[0] || die 'Please pass in a monthly visitor amount';
 
 # We need to do the inverse of the formula given on http://netberry.co.uk/alexa-rank-explained.htm
 my $ranking = int ( ( $monthly_visitors / COEFFICIENT ) ** ( POWER ) );
 
-die "Ranking is not in the top " . MAX_RANKING if ( $ranking >= MAX_RANKING );
+die 'Ranking is not in the top ' . MAX_RANKING if ( $ranking >= MAX_RANKING );
 
 my $page = int ( $ranking / RANKINGS_PER_PAGE );
 
