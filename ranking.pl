@@ -49,7 +49,7 @@ sub scrape {
     my $html = get( $RANKINGS_URL . $number )
       or croak "Could not scrape page $number";
 
-    my @found_sites = $html =~ m{<a href="/siteinfo/([^"]+)">}xmsg;
+    my @found_sites = $html =~ m{<a href="/siteinfo/([^"]+)">}g;
 
     return @found_sites;
 }
