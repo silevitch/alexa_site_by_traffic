@@ -1,5 +1,11 @@
 #!/usr/bin/env perl
 
+#
+# rankings.pl [monthly_visits]
+# Simple script takes a monthly visits parameter and returns where
+# that amount would fall on Alexa's top 500.
+#
+
 use strict;
 use warnings;
 
